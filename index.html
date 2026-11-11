@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>할일</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bg" aria-hidden="true"></div>
+
+    <main class="app">
+      <header class="header">
+        <p class="brand">할일</p>
+        <h1 class="title">오늘 할 일을 정리하세요</h1>
+        <p class="subtitle">추가하고, 고치고, 지울 수 있어요.</p>
+      </header>
+
+      <form class="todo-form" id="todo-form" autocomplete="off">
+        <label class="sr-only" for="todo-input">할일 입력</label>
+        <input
+          type="text"
+          id="todo-input"
+          class="todo-input"
+          placeholder="새 할일을 입력하세요"
+          maxlength="120"
+          required
+        />
+        <button type="submit" class="btn btn-primary" id="submit-btn">
+          추가
+        </button>
+        <button type="button" class="btn btn-ghost hidden" id="cancel-btn">
+          취소
+        </button>
+      </form>
+
+      <section class="todo-panel" aria-labelledby="list-heading">
+        <div class="panel-top">
+          <h2 id="list-heading" class="panel-title">목록</h2>
+          <p class="count" id="todo-count">0개</p>
+        </div>
+
+        <ul class="todo-list" id="todo-list"></ul>
+
+        <p class="empty" id="empty-state">아직 할일이 없습니다. 위에서 추가해보세요.</p>
+      </section>
+    </main>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
